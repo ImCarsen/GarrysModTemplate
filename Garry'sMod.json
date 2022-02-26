@@ -1,1 +1,75 @@
-
+{
+  "name": "GMODv2",
+  "display": "Garry's Mod v2",
+  "type": "gmod",
+  "install": [
+    {
+      "target": "steamcmd",
+      "type": "mkdir"
+    },
+    {
+      "commands": [
+        "curl https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz -o steamcmd/steamcmd.tar.gz",
+        "tar -zxvf steamcmd/steamcmd.tar.gz -C steamcmd",
+        "rm steamcmd/steamcmd.tar.gz",
+        "sh steamcmd/steamcmd.sh"
+      ],
+      "type": "command"
+    }
+  ],
+  "run": {
+    "stop": "",
+    "command": "./srcds_run +ip ${ip} +port ${port} -game garrysmod +map ${map} +maxplayers ${maxplayers} -norestart ${args}",
+    "workingDirectory": "",
+    "pre": [],
+    "post": [],
+    "environmentVars": {}
+  },
+  "data": {
+    "args": {
+      "type": "string",
+      "desc": "Add any additional arguments for the server",
+      "display": "Additional Args"
+    },
+    "ip": {
+      "type": "string",
+      "desc": "The server will bind to this IP",
+      "display": "IP",
+      "required": true,
+      "value": "0.0.0.0"
+    },
+    "map": {
+      "type": "string",
+      "desc": "The map the server will use",
+      "display": "Map",
+      "required": true,
+      "value": "gm_construct"
+    },
+    "maxplayers": {
+      "type": "integer",
+      "desc": "Max amount of players that can join the server",
+      "display": "Max Players",
+      "required": true,
+      "value": "20"
+    },
+    "port": {
+      "type": "integer",
+      "desc": "The server will be bound to this port",
+      "display": "Port",
+      "required": true,
+      "value": "27015"
+    }
+  },
+  "environment": {
+    "type": "tty"
+  },
+  "supportedEnvironments": [
+    {
+      "type": "tty"
+    },
+    {
+      "networkMode": "host",
+      "type": "docker"
+    }
+  ]
+}
