@@ -30,13 +30,15 @@
     },
     {
       "commands": [
-        "tar -xvf cstrike.tar -C cstrike"
+        "tar -xvf cstrike.tar -C cstrike",
+        "rm cstrike.tar",
+        "cp steamcmd/linux32/libstdc++.so.6 bin/"
       ],
       "type": "command"
     }
   ],
   "run": {
-    "stop": "",
+    "stop": "quit",
     "command": "./srcds_run +ip ${ip} +port ${port} -game garrysmod +map ${map} +maxplayers ${maxplayers} -norestart ${args}",
     "workingDirectory": "",
     "pre": [],
