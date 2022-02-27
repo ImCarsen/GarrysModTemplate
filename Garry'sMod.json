@@ -12,7 +12,25 @@
         "curl https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz -o steamcmd/steamcmd.tar.gz",
         "tar -zxvf steamcmd/steamcmd.tar.gz -C steamcmd",
         "rm steamcmd/steamcmd.tar.gz",
-        "sh steamcmd/steamcmd.sh"
+        "steamcmd/steamcmd.sh +force_install_dir .. +login anonymous +app_update 4020 +quit",
+        "mkdir -p .steam/sdk32",
+        "cp steamcmd/linux32/steamclient.so .steam/sdk32/steamclient.so"
+      ],
+      "type": "command"
+    },
+    {
+      "commands": [
+        "curl -L https://dl-web.dropbox.com/s/kppa8hzfzi6txfx/cstrike.tar -o cstrike.tar"
+      ],
+      "type": "command"
+    },
+    {
+      "target": "cstrike",
+      "type": "mkdir"
+    },
+    {
+      "commands": [
+        "tar -xvf cstrike.tar -C cstrike"
       ],
       "type": "command"
     }
