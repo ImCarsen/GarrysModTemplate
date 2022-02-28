@@ -38,7 +38,7 @@
     }
   ],
   "run": {
-    "stop": "quit",
+    "stop": "exit",
     "command": "./srcds_run +ip ${ip} +port ${port} -game garrysmod +map ${map} +maxplayers ${maxplayers} -norestart ${args}",
     "workingDirectory": "",
     "pre": [],
