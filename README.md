@@ -23,7 +23,7 @@ The Dependencies:
   lib32gcc1
   libsdl2-2.0-0:i386
 
-If you know of a way to use (sudo) apt to install said dependencies within pufferpanel and get past the password enter promopt, please let me know.
+If you know of a way to use (sudo) apt to install said dependencies within pufferpanel and get past the password enter prompt, please let me know.
 
 My Discord: Carsen#1871
 Feel free to reach out if you have any questions or suggestions.
